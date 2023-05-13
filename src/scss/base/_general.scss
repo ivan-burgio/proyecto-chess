@@ -1,0 +1,44 @@
+.cabeza {
+    width: 20%;
+    height: 10%;
+    
+    .titulo {
+        color: white;
+        font-size: 30px;
+        font-family: 'Times New Roman', Times, serif;
+    };
+};
+
+body {
+    background-color: black;
+
+    .nav {
+        width: 20%;
+        height: 70%;
+        
+        .lista {
+            color: white;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+
+            li {
+                margin: 3px;
+            };
+        };
+    };
+};
+
+footer {
+    width: 10%;
+    height: 5%; 
+    
+    ul {
+        color: hsla(0,0%,100%,.2);;
+        font-size: 10px;
+        font-family: 'Times New Roman', Times, serif;
+
+        li {
+            margin: 2px;
+        }
+    }
+}
