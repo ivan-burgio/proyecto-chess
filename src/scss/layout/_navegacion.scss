@@ -1,0 +1,50 @@
+@use 'base/variables' as v;
+
+.nav {
+    background-color: v.$negro;
+    width: 30rem;
+    height: 100%;
+    padding-top: 1rem;
+    
+    .titulo {
+        text-align: center;
+        color: v.$principal;
+        font-size: 3.5rem;
+        margin-bottom: 0;
+    };
+    
+    .contenedor-superior {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        height: 60%;
+        flex-direction: column;
+        margin: 0 2.5rem;
+        border-bottom: 1px solid v.$blanco;
+        
+        .links {
+            font-size: 3rem;
+            color: v.$blanco;
+            margin: 0.3rem;
+            padding: 2rem 0;
+        };
+    };
+
+    .contenedor-inferior {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        height: 20%;
+        flex-direction: column;
+        margin: 0 2.5rem;
+
+        .links2 {
+            font-size: 3rem;
+            color: v.$blanco;
+            margin: 0.3rem;
+            padding: 2rem 0;
+        }
+    };
+
+};
+

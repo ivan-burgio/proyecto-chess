@@ -1,38 +1,18 @@
+@use 'base/variables' as v;
+
 html {
     font-size: 62.5%;
     box-sizing: border-box;
     height: 100%;
 }
 
-.cabeza {
-    width: 20%;
-    height: 10%;
-    
-    .titulo {
-        color: white;
-        font-size: 30px;
-        font-family: 'Times New Roman', Times, serif;
-    };
-};
-
-body {
-    background-color: #fc0233;
-        
-    .nav {
-        width: 20%;
-        min-height: 70%;
-        height: 70%;
-        
-        .lista {
-            color: black;
-            font-size: 20px;
-            font-family: 'Times New Roman', Times, serif;
-            list-style: none;
-            li {
-                margin: 3px;
-            };
-        };
-    };
+body { 
+    margin: 0px auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(80,79,76);
+    font-family: v.$fuente_principal;
+    overflow-y: hidden;
 };
 
 footer {
@@ -42,7 +22,6 @@ footer {
     ul {
         color: hsla(0,0%,100%,.2);;
         font-size: 10px;
-        font-family: 'Times New Roman', Times, serif;
 
         li {
             margin: 2px;
