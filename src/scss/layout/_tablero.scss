@@ -1,0 +1,22 @@
+@use 'base/variables' as v;
+
+.negro {
+    background-color: v.$principal;
+    border: 1px solid black;
+}
+
+.blanco {
+    background-color: v.$blanco;
+    border: 1px solid black;
+}
+
+.chess {
+    display: grid;
+    border: 1px solid v.$negro;
+    height: 75rem;
+    width: 75rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+

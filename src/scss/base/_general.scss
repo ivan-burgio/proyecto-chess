@@ -13,4 +13,5 @@ body {
     background-color: v.$fondo;
     font-family: v.$fuente_principal;
     overflow-y: hidden;
+    display: flex;
 };
