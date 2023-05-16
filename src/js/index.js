@@ -1,6 +1,7 @@
 // Invocar el HTML
 
 tablero();
+Partidas();
 
 const Chess = document.querySelector('.chess');
 const Plays = document.querySelector('.plays');
@@ -113,4 +114,18 @@ function numeroLetra(y) {
     if (y >= 1 && y <= 8) {
         return Letras[y - 1];
     }
+};
+
+function Partidas() {
+    //Insertar DIV
+    const Historial = document.querySelector('.plays');
+    const Jugadas = document.createElement('DIV');
+    Jugadas.classList.add('party');
+    Historial.appendChild(Jugadas);
+    
+    //Creo el titulo
+    const Titulo = document.createElement('H2');
+    Titulo.innerHTML = `Jugadas chetas`; 
+    Jugadas.appendChild(Titulo);
+    
 };
