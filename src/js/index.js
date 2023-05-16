@@ -2,6 +2,7 @@
 
 tablero();
 Partidas();
+createParts(i)
 
 const Chess = document.querySelector('.chess');
 const Plays = document.querySelector('.plays');
@@ -9,12 +10,14 @@ const Plays = document.querySelector('.plays');
 
 //Funciones
 
+
+//Create table
 function tablero() {
     const Tablero = document.querySelector('.chess');
 
-    for(let i = 1; i <= 8; i++) { // Numeros
+    for( var i = 1; i <= 8; i++ ) { // Numeros
         
-        if(i <= 1) {
+        if( i <= 1 ) {
 
             for(let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
@@ -82,6 +85,7 @@ function tablero() {
                 Casillas.classList.remove(color1(a));
                 Casillas.classList.add('casilla', i, numeroLetra(a), color2(a));
                 Tablero.appendChild(Casillas);
+
             };
 
         };
@@ -89,6 +93,7 @@ function tablero() {
     };               
     
 };
+
 
 function color1(x) {
     if(x % 2 === 0) {
@@ -116,6 +121,35 @@ function numeroLetra(y) {
     }
 };
 
+
+//Create parts
+function createParts(x) {
+
+    if (x <= 2) {
+
+        for (let j = 1; j <= 2; j++) {
+
+            const tablero = document.getElementsByClassName('casilla');
+                
+                for(let h = 1; h <= 8; h++) {
+                    const parts = document.createElement('DIV');
+                    parts.classList.add('piezas');
+                    tablero.appendChild(parts);
+                };
+            
+        };
+
+    }
+
+    
+
+};
+
+
+
+
+//Create plays
+
 function Partidas() {
     //Insertar DIV
     const Historial = document.querySelector('.plays');
@@ -129,3 +163,6 @@ function Partidas() {
     Jugadas.appendChild(Titulo);
     
 };
+
+
+
