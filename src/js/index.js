@@ -2,7 +2,7 @@
 
 tablero();
 Partidas();
-createParts(i)
+createParts()
 
 const Chess = document.querySelector('.chess');
 const Plays = document.querySelector('.plays');
@@ -15,72 +15,72 @@ const Plays = document.querySelector('.plays');
 function tablero() {
     const Tablero = document.querySelector('.chess');
 
-    for( var i = 1; i <= 8; i++ ) { // Numeros
-        
-        if( i <= 1 ) {
+    for (var i = 1; i <= 8; i++) { // Numeros
 
-            for(let a = 1; a <= 8; a++) { // Letras
+        if (i <= 1) {
+
+            for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.add('casilla', i, numeroLetra(a), color1(a));
                 Tablero.appendChild(Casillas);
             };
 
-        } else if( i <=  2) {
-            
-            for(let a = 1; a <= 8; a++) { // Letras
+        } else if (i <= 2) {
+
+            for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color1(a));
                 Casillas.classList.add('casilla', i, numeroLetra(a), color2(a));
                 Tablero.appendChild(Casillas);
             };
-        } else if( i <= 3 ) {
+        } else if (i <= 3) {
 
-            for(let a = 1; a <= 8; a++) { // Letras
+            for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color2(a));
                 Casillas.classList.add('casilla', i, numeroLetra(a), color1(a));
                 Tablero.appendChild(Casillas);
             };
 
-        } else if( i <= 4 ) {
+        } else if (i <= 4) {
 
-            for(let a = 1; a <= 8; a++) { // Letras
+            for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color1(a));
                 Casillas.classList.add('casilla', i, numeroLetra(a), color2(a));
                 Tablero.appendChild(Casillas);
             };
 
-        } else if( i <= 5 ) {
+        } else if (i <= 5) {
 
-            for(let a = 1; a <= 8; a++) { // Letras
+            for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color2(a));
                 Casillas.classList.add('casilla', i, numeroLetra(a), color1(a));
                 Tablero.appendChild(Casillas);
             };
 
-        } else if( i <= 6 ) {
+        } else if (i <= 6) {
 
-            for(let a = 1; a <= 8; a++) { // Letras
+            for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color1(a));
                 Casillas.classList.add('casilla', i, numeroLetra(a), color2(a));
                 Tablero.appendChild(Casillas);
             };
 
-        } else if( i <= 7) {
+        } else if (i <= 7) {
 
-            for(let a = 1; a <= 8; a++) { // Letras
+            for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color2(a));
                 Casillas.classList.add('casilla', i, numeroLetra(a), color1(a));
                 Tablero.appendChild(Casillas);
             };
 
-        } else if( i <= 8) {
+        } else if (i <= 8) {
 
-            for(let a = 1; a <= 8; a++) { // Letras
+            for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color1(a));
                 Casillas.classList.add('casilla', i, numeroLetra(a), color2(a));
@@ -90,22 +90,22 @@ function tablero() {
 
         };
 
-    };               
-    
+    };
+
 };
 
 
 function color1(x) {
-    if(x % 2 === 0) {
+    if (x % 2 === 0) {
         return 'negro'
     } else {
         return 'blanco'
     };
-};   
+};
 
 
 function color2(y) {
-    if(y % 2 === 0) {
+    if (y % 2 === 0) {
         return 'blanco'
     } else {
         return 'negro'
@@ -115,7 +115,7 @@ function color2(y) {
 
 function numeroLetra(y) {
     const Letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
-    
+
     if (y >= 1 && y <= 8) {
         return Letras[y - 1];
     }
@@ -123,25 +123,29 @@ function numeroLetra(y) {
 
 
 //Create parts
-function createParts(x) {
+function createParts() {
 
-    if (x <= 2) {
 
-        for (let j = 1; j <= 2; j++) {
+    for (let j = 1; j <= 2; j++) {
 
-            const tablero = document.getElementsByClassName('casilla');
-                
-                for(let h = 1; h <= 8; h++) {
-                    const parts = document.createElement('DIV');
-                    parts.classList.add('piezas');
-                    tablero.appendChild(parts);
-                };
-            
-        };
+        const tablero = document.querySelectorAll('.casilla');
 
-    }
+        tablero.forEach(casilla => {
 
-    
+            for (let h = 1; h <= 8; h++) {
+                const parts = document.createElement('DIV');
+                parts.classList.add('piezas');
+                casilla.appendChild(parts);
+            };
+
+
+        });
+
+
+    };
+
+
+
 
 };
 
@@ -156,12 +160,12 @@ function Partidas() {
     const Jugadas = document.createElement('DIV');
     Jugadas.classList.add('party');
     Historial.appendChild(Jugadas);
-    
+
     //Creo el titulo
     const Titulo = document.createElement('H2');
-    Titulo.innerHTML = `Jugadas chetas`; 
+    Titulo.innerHTML = `Jugadas chetas`;
     Jugadas.appendChild(Titulo);
-    
+
 };
 
 
