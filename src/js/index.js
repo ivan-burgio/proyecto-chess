@@ -5,6 +5,13 @@ Partidas();
 
 const Chess = document.querySelector('.chess');
 const Plays = document.querySelector('.plays');
+const Piezas = document.getElementsByClassName('.piezas')
+
+//Create events
+
+
+Piezas.addEventListener('onclick', ChangeDiv());
+
 
 
 //Funciones
@@ -109,9 +116,9 @@ function tablero() {
 
                 //Create parts
 
-                const piezas = document.createElement('DIV');
-                piezas.classList.add('piezas');
-                Casillas.appendChild(piezas);
+                const piezas2 = document.createElement('DIV');
+                piezas2.classList.add('piezas2');
+                Casillas.appendChild(piezas2);
 
             };
 
@@ -163,5 +170,6 @@ function Partidas() {
 
 };
 
+//Function for pieces 
 
 
