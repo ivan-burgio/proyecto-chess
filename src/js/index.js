@@ -3,28 +3,43 @@
 tablero();
 Partidas();
 
-const piezas = document.getElementsByClassName('piezas');
-
-//Create events
-
-
-//Itero sobre la lista para poder agregar un EventListener a cada objeto
-for( let i = 0; i < piezas.length; i++ ) {
+document.addEventListener('DOMContentLoaded', function() {
     
-    piezas[i].addEventListener("click", function() {
-        //Selecciono el div por la clase
-        console.log('Te tengo...');
-        /*
-        
-        La idea es que el div seleccionado se añide a la casilla seleccionada por el valor de su clase.
-        Pero pimba, un asadito, toy todo sucio asi que me wua a bañar y a teneder la cama jeje.
-        PD: Ifier si ves esto sos tremendo puto que nunca se mete al proyecto y tas re deja tirado como el Lock
-        
-        */
+    const piezas = document.getElementsByClassName('piezas');
+    const Casillas2 = document.getElementsByClassName('casilla');
 
-    });
+    //Create events
 
-};
+
+    //Itero sobre la lista para poder agregar un EventListener a cada objeto
+    for (let i = 0; i < piezas.length; i++) {
+
+        piezas[i].addEventListener('click', function () {
+            //Selecciono el div por la clase
+            console.log('Te tengo...');
+            /*
+            
+            La idea es que el div seleccionado se añide a la casilla seleccionada por el valor de su clase.
+            Pero pimba, un asadito, toy todo sucio asi que me wua a bañar y a teneder la cama jeje.
+            PD: Ifier si ves esto sos tremendo puto que nunca se mete al proyecto y tas re deja tirado como el Lock
+            
+            */
+
+        });
+
+    };
+
+    for (let j = 0; j < Casillas2.length; j++) {
+
+        Casillas2[j].addEventListener('click', function(){
+            console.log('Toma')
+        });
+    };
+
+});
+
+
+
 
 
 
@@ -44,7 +59,7 @@ function tablero() {
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.add('casilla', i, numeroLetra(a), color1(a));
                 Tablero.appendChild(Casillas);
-                
+
                 //Create parts
 
                 const piezas2 = document.createElement('DIV');
@@ -60,7 +75,7 @@ function tablero() {
                 Casillas.classList.remove(color1(a));
                 Casillas.classList.add('casilla', i, numeroLetra(a), color2(a));
                 Tablero.appendChild(Casillas);
-                
+
                 //Create parts
 
                 const piezas2 = document.createElement('DIV');
@@ -186,4 +201,7 @@ function Partidas() {
 
 //Function for pieces 
 
-
+function SelectDiv() {
+    const time = Date.now();
+    console.log(time);
+};
