@@ -1,8 +1,9 @@
 @use 'base/variables' as v;
 
 .piezas {
-    width: 2rem;
+    width: 3rem;
     margin: 0px auto;
-    height: 2rem;
+    height: 3rem;
     background-color: v.$negro;
-}
+};
+

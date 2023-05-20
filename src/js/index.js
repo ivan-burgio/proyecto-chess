@@ -3,14 +3,28 @@
 tablero();
 Partidas();
 
-const Chess = document.querySelector('.chess');
-const Plays = document.querySelector('.plays');
-const Piezas = document.getElementsByClassName('.piezas')
+const piezas = document.getElementsByClassName('piezas');
 
 //Create events
 
 
-Piezas.addEventListener('onclick', ChangeDiv());
+//Itero sobre la lista para poder agregar un EventListener a cada objeto
+for( let i = 0; i < piezas.length; i++ ) {
+    
+    piezas[i].addEventListener("click", function() {
+        //Selecciono el div por la clase
+        console.log('Te tengo...');
+        /*
+        
+        La idea es que el div seleccionado se añide a la casilla seleccionada por el valor de su clase.
+        Pero pimba, un asadito, toy todo sucio asi que me wua a bañar y a teneder la cama jeje.
+        PD: Ifier si ves esto sos tremendo puto que nunca se mete al proyecto y tas re deja tirado como el Lock
+        
+        */
+
+    });
+
+};
 
 
 
@@ -33,9 +47,9 @@ function tablero() {
                 
                 //Create parts
 
-                const piezas = document.createElement('DIV');
-                piezas.classList.add('piezas');
-                Casillas.appendChild(piezas);
+                const piezas2 = document.createElement('DIV');
+                piezas2.classList.add('piezas', 'white');
+                Casillas.appendChild(piezas2);
 
             };
 
@@ -49,9 +63,9 @@ function tablero() {
                 
                 //Create parts
 
-                const piezas = document.createElement('DIV');
-                piezas.classList.add('piezas');
-                Casillas.appendChild(piezas);
+                const piezas2 = document.createElement('DIV');
+                piezas2.classList.add('piezas', 'white', 'peones');
+                Casillas.appendChild(piezas2);
 
             };
 
@@ -101,9 +115,9 @@ function tablero() {
 
                 //Create parts
 
-                const piezas = document.createElement('DIV');
-                piezas.classList.add('piezas');
-                Casillas.appendChild(piezas);
+                const piezas2 = document.createElement('DIV');
+                piezas2.classList.add('piezas', 'black', 'peones');
+                Casillas.appendChild(piezas2);
             };
 
         } else if (i <= 8) {
@@ -117,7 +131,7 @@ function tablero() {
                 //Create parts
 
                 const piezas2 = document.createElement('DIV');
-                piezas2.classList.add('piezas2');
+                piezas2.classList.add('piezas', 'black');
                 Casillas.appendChild(piezas2);
 
             };
