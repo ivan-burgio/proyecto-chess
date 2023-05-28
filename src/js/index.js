@@ -10,13 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Create events
 
-
+    
     //Itero sobre la lista para poder agregar un EventListener a cada objeto
     for (let i = 0; i < piezas.length; i++) {
 
         piezas[i].addEventListener('click', function () {
-            //Selecciono el div por la clase
+            // Selecciono el div por la clase
             console.log('Te tengo...');
+            
             /*
             
             La idea es que el div seleccionado se añide a la casilla seleccionada por el valor de su clase.
@@ -32,16 +33,20 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let j = 0; j < Casillas2.length; j++) {
 
         Casillas2[j].addEventListener('click', function(){
-            console.log('Toma')
+    
+            const ccNumeros = Casillas2[j].classList[1];
+            const ccLetras = Casillas2[j].classList[2];
+
+
+            
+            
+
+            console.log(ccNumeros + ccLetras);
+            
         });
     };
 
 });
-
-
-
-
-
 
 //Funciones
 
@@ -56,31 +61,28 @@ function tablero() {
 
             for (let a = 1; a <= 8; a++) { // Letras
                 //Color of table
-                const Casillas = document.createElement('DIV');
-                Casillas.classList.add('casilla', i, numeroLetra(a), color1(a));
+                
+                Casillas.classList.add('casilla', i, numeroLetra(a), color1(a)); // AAAAAAAAAAAAA
                 Tablero.appendChild(Casillas);
 
                 //Create parts
 
-                const piezas2 = document.createElement('DIV');
-                piezas2.classList.add('piezas', 'white');
-                Casillas.appendChild(piezas2);
+                CreacionTablero('white');
+                
 
             };
 
         } else if (i <= 2) {
 
             for (let a = 1; a <= 8; a++) { // Letras
-                const Casillas = document.createElement('DIV');
+                
                 Casillas.classList.remove(color1(a));
-                Casillas.classList.add('casilla', i, numeroLetra(a), color2(a));
+                Casillas.classList.add('casilla', i, numeroLetra(a), color2(a)); // AAAAAAAAAAAAA
                 Tablero.appendChild(Casillas);
 
                 //Create parts
 
-                const piezas2 = document.createElement('DIV');
-                piezas2.classList.add('piezas', 'white', 'peones');
-                Casillas.appendChild(piezas2);
+                CreacionTablero('white');
 
             };
 
@@ -89,7 +91,7 @@ function tablero() {
             for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color2(a));
-                Casillas.classList.add('casilla', i, numeroLetra(a), color1(a));
+                Casillas.classList.add('casilla', i, numeroLetra(a), color1(a)); // AAAAAAAAAAAAA
                 Tablero.appendChild(Casillas);
             };
 
@@ -98,7 +100,7 @@ function tablero() {
             for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color1(a));
-                Casillas.classList.add('casilla', i, numeroLetra(a), color2(a));
+                Casillas.classList.add('casilla', i, numeroLetra(a), color2(a)); // AAAAAAAAAAAAA
                 Tablero.appendChild(Casillas);
             };
 
@@ -107,7 +109,7 @@ function tablero() {
             for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color2(a));
-                Casillas.classList.add('casilla', i, numeroLetra(a), color1(a));
+                Casillas.classList.add('casilla', i, numeroLetra(a), color1(a)); // AAAAAAAAAAAAA
                 Tablero.appendChild(Casillas);
             };
 
@@ -116,38 +118,34 @@ function tablero() {
             for (let a = 1; a <= 8; a++) { // Letras
                 const Casillas = document.createElement('DIV');
                 Casillas.classList.remove(color1(a));
-                Casillas.classList.add('casilla', i, numeroLetra(a), color2(a));
+                Casillas.classList.add('casilla', i, numeroLetra(a), color2(a)); // AAAAAAAAAAAAA
                 Tablero.appendChild(Casillas);
             };
 
         } else if (i <= 7) {
 
             for (let a = 1; a <= 8; a++) { // Letras
-                const Casillas = document.createElement('DIV');
+                
                 Casillas.classList.remove(color2(a));
-                Casillas.classList.add('casilla', i, numeroLetra(a), color1(a));
+                Casillas.classList.add('casilla', i, numeroLetra(a), color1(a)); // AAAAAAAAAAAAA
                 Tablero.appendChild(Casillas);
 
                 //Create parts
 
-                const piezas2 = document.createElement('DIV');
-                piezas2.classList.add('piezas', 'black', 'peones');
-                Casillas.appendChild(piezas2);
+                CreacionTablero('black');
             };
 
         } else if (i <= 8) {
 
             for (let a = 1; a <= 8; a++) { // Letras
-                const Casillas = document.createElement('DIV');
+                
                 Casillas.classList.remove(color1(a));
-                Casillas.classList.add('casilla', i, numeroLetra(a), color2(a));
+                Casillas.classList.add('casilla', i, numeroLetra(a), color2(a)); // AAAAAAAAAAAAA
                 Tablero.appendChild(Casillas);
 
-                //Create parts
+                // Create parts
 
-                const piezas2 = document.createElement('DIV');
-                piezas2.classList.add('piezas', 'black');
-                Casillas.appendChild(piezas2);
+                CreacionTablero('black');
 
             };
 
@@ -156,6 +154,16 @@ function tablero() {
     };
 
 };
+
+//Create table
+
+function CreacionTablero(color, ) {
+    const Casillas = document.createElement('DIV');
+    const piezas2 = document.createElement('DIV');
+    Casillas.classList.add('casilla', i, numeroLetra(a), color1(a));
+    piezas2.classList.add('piezas', color);
+    Casillas.appendChild(piezas2);
+}
 
 
 function color1(x) {
@@ -199,9 +207,4 @@ function Partidas() {
 
 };
 
-//Function for pieces 
 
-function SelectDiv() {
-    const time = Date.now();
-    console.log(time);
-};
