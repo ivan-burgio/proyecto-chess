@@ -8,23 +8,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const piezas = document.getElementsByClassName('piezas');
     const Casillas2 = document.getElementsByClassName('casilla');
 
-    //Create events
+    let piece = [];
+    let casilla = [];
 
-
-    //Itero sobre la lista para poder agregar un EventListener a cada objeto
+    //Itero sobre la lista para poder agregar un EventListener a cada objeto6655
     for (let i = 0; i < piezas.length; i++) {
 
         piezas[i].addEventListener('click', function () {
             // Selecciono el div por la clase
-            console.log('Te tengo...');
+            const pieza = piezas[i].classList[0];
 
-            /*
-            
-            La idea es que el div seleccionado se añide a la casilla seleccionada por el valor de su clase.
-            Pero pimba, un asadito, toy todo sucio asi que me wua a bañar y a teneder la cama jeje.
-            PD: Ifier si ves esto sos tremendo puto que nunca se mete al proyecto y tas re deja tirado como el Lock
-            
-            */
+            //Formatear el array
+            ClearArray()
+
+            piece.push(pieza);
+
+            console.log(piece);
 
         });
 
@@ -35,21 +34,30 @@ document.addEventListener('DOMContentLoaded', function () {
         Casillas2[j].addEventListener('click', function () {
 
             const ccNumeros = Casillas2[j].classList[1];
-            const ccLetras = Casillas2[j].classList[2];
+            const ccLetras = Casillas2[j].classList[3];
 
+            //Formatear el array
+            ClearArray()
 
+            casilla.push(ccNumeros);
+            casilla.push(ccLetras);
 
-
-
-            console.log(ccNumeros + ccLetras);
-
+            console.log(casilla);
+            
         });
     };
 
+    //Limpiar el Array
+    function ClearArray() {
+    
+        piece = [];
+        casilla = [];
+    
+    };
+    
 });
 
 //Funciones
-
 
 //Create table
 function tablero() {
@@ -59,69 +67,10 @@ function tablero() {
 
     for ( i = 1; i <= 8; i++) { // Numeros
 
-        if (i <= 1) {
-
-            for (let a = 1; a <= 8; a++) { // Letras
-                //Color of table
-                Casillas(i, a);
-
-            };
-
-        } else if (i <= 2) {
-
-            for (let a = 1; a <= 8; a++) { // Letras
-                
-                Casillas(i, a);
-
-            };
-
-        } else if (i <= 3) {
-
-            for (let a = 1; a <= 8; a++) { // Letras
-                
-                Casillas(i, a);
-                
-            };
-
-        } else if (i <= 4) {
-
-            for (let a = 1; a <= 8; a++) { // Letras
-                
-                Casillas(i, a);
-
-            };
-
-        } else if (i <= 5) {
-
-            for (let a = 1; a <= 8; a++) { // Letras
-                
-                Casillas(i, a);
-                
-            };
-
-        } else if (i <= 6) {
-
-            for (let a = 1; a <= 8; a++) { // Letras
-                
-                Casillas(i ,a);
-                
-            };
-
-        } else if (i <= 7) {
-
-            for (let a = 1; a <= 8; a++) { // Letras
-                
-                Casillas(i, a);
-
-            };
-
-        } else if (i <= 8) {
-
-            for (let a = 1; a <= 8; a++) { // Letras
-                
-                Casillas(i, a);
-
-            };
+        for (let a = 1; a <= 8; a++) { // Letras
+           
+            //Color of table
+            Casillas(i, a);
 
         };
 
@@ -165,8 +114,6 @@ function tablero() {
 
 };
 
-
-
 function color1(x) {
     
     if (x % 2 === 0) {
@@ -175,7 +122,6 @@ function color1(x) {
         return 'blanco'
     };
 };
-
 
 function color2(y) {
     
@@ -186,7 +132,6 @@ function color2(y) {
     };
 };
 
-
 function numeroLetra(y) {
     
     const Letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
@@ -196,8 +141,8 @@ function numeroLetra(y) {
     }
 };
 
-
 function Partidas() {
+    
     //Insertar DIV
     const Historial = document.querySelector('.plays');
     const Jugadas = document.createElement('DIV');
@@ -210,6 +155,5 @@ function Partidas() {
     Jugadas.appendChild(Titulo);
 
 };
-
 
 
