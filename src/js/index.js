@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         piezas[i].addEventListener('click', function () {
             // Selecciono el div por la clase
-            const pieza = piezas[i].classList[0];
+            const pieza = piezas[i].classList[2];
 
             //Formatear el array
             ClearArray()
@@ -96,7 +96,7 @@ function tablero() {
             piezas1();    
             
             function piezas1() {
-                
+
                 const piezas = document.createElement('DIV');
                 if(i <= 2) {
                     piezas.classList.add('piezas', 'black');
@@ -105,7 +105,13 @@ function tablero() {
                 };
                 
                 casillas1.appendChild(piezas);
-            
+
+            };
+
+            for(let u = 0; u <= 4; u++) {
+
+                console.log(u);
+
             };
 
         };
