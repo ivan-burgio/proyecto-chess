@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         piezas[i].addEventListener('click', function () {
             // Selecciono el div por la clase
-            const pieza = piezas[i].classList[2];
+            const pieza = piezas[i].classList[0];
 
             //Formatear el array
             ClearArray()
@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
             casilla.push(ccNumeros);
             casilla.push(ccLetras);
 
-            console.log(casilla);
-            
+            casilla = document.getElementBy
+
         });
     };
 
@@ -105,12 +105,6 @@ function tablero() {
                 };
                 
                 casillas1.appendChild(piezas);
-
-            };
-
-            for(let u = 0; u <= 4; u++) {
-
-                console.log(u);
 
             };
 
